@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bon Voyage, Khushbu ✈</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Caveat:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFFDF9;
+      --rose: #FDF0F0;
+      --rose2: #F8E8E8;
+      --red: #991B1B;
+      --red2: #B91C1C;
+      --gold: #D4AF37;
+      --gold2: #E5C158;
+      --ink: #3B1111;
+      --deep: #5E1414
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font: 400 16px/1.7 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      line-height: 1.1
+    }
+
+    em {
+      color: var(--red2)
+    }
+
+    .hand {
+      font-family: 'Caveat', cursive;
+      font-weight: 500
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: auto;
+      padding: 0 22px
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 253, 249, .88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rose2)
+    }
+
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      margin-left: 22px
+    }
+
+    nav a:hover {
+      color: var(--red2)
+    }
+
+    @media(max-width:640px) {
+      nav a {
+        display: none
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s ease, transform .9s ease
+    }
+
+    .reveal.in,
+    .nojs .reveal {
+      opacity: 1;
+      transform: none
+    }
+
+    /* hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 90px 0 70px;
+      background: radial-gradient(ellipse at 50% 20%, rgba(229, 193, 88, .28), transparent 60%), var(--cream);
+      overflow: hidden
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 10vw, 112px);
+      color: var(--deep);
+      margin: 18px 0 20px
+    }
+
+    .hero h1 em {
+      display: block;
+      font-style: italic
+    }
+
+    .hero p {
+      max-width: 440px;
+      margin: auto;
+      opacity: .85
+    }
+
+    .flight {
+      display: block;
+      width: min(560px, 92%);
+      margin: 26px auto 4px;
+      overflow: visible
+    }
+
+    .flight .trail {
+      stroke-dasharray: 6 8;
+      animation: dash 14s linear infinite
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -280
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      cursor: pointer;
+      background: var(--red);
+      color: #FFF5E6;
+      padding: 14px 26px;
+      font: 600 11px 'Plus Jakarta Sans';
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: .3s
+    }
+
+    .btn:hover {
+      background: var(--red2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(153, 27, 27, .25)
+    }
+
+    .stamp {
+      position: absolute;
+      right: 6%;
+      top: 110px;
+      width: 150px;
+      padding: 16px;
+      background: #F7EAD2;
+      border: 1px solid var(--gold);
+      transform: rotate(7deg);
+      text-align: left;
+      box-shadow: 0 12px 30px rgba(94, 20, 20, .15);
+      animation: float 6s ease-in-out infinite
+    }
+
+    .stamp b {
+      font-family: 'Playfair Display';
+      font-size: 19px;
+      color: var(--ink);
+      display: block;
+      line-height: 1.2;
+      margin: 6px 0
+    }
+
+    .stamp small {
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .7
+    }
+
+    .stamp .hand {
+      color: var(--red2);
+      font-size: 17px
+    }
+
+    @media(max-width:900px) {
+      .stamp {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 34px auto 0;
+        display: block;
+        width: 160px
+      }
+    }
+
+    .float {
+      position: absolute;
+      color: var(--gold);
+      animation: float 7s ease-in-out infinite;
+      font-size: 22px
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-14px) rotate(4deg)
+      }
+    }
+
+    .live {
+      margin-top: 22px;
+      font-size: 20px;
+      color: var(--red)
+    }
+
+    .live i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-right: 8px;
+      animation: pulse 1.6s infinite
+    }
+
+    @keyframes pulse {
+      50% {
+        opacity: .25
+      }
+    }
+
+    .intro {
+      border-bottom: 1px solid var(--rose2);
+      padding: 34px 0
+    }
+
+    .intro .wrap {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      align-items: start
+    }
+
+    .intro h3 {
+      font-size: 22px;
+      font-weight: 500
+    }
+
+    @media(max-width:700px) {
+      .intro .wrap {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* gallery */
+    section.pad {
+      padding: 96px 0
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 34px
+    }
+
+    .head h2 {
+      font-size: clamp(36px, 6vw, 62px);
+      color: var(--deep);
+      margin-top: 10px
+    }
+
+    .head p {
+      max-width: 280px;
+      font-size: 13px;
+      opacity: .8
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 30px
+    }
+
+    .filters button {
+      font: 500 11px 'Plus Jakarta Sans';
+      letter-spacing: .04em;
+      padding: 9px 16px;
+      border-radius: 99px;
+      border: 1px solid var(--rose2);
+      background: var(--cream);
+      color: var(--ink);
+      cursor: pointer;
+      transition: .25s
+    }
+
+    .filters button:hover {
+      border-color: var(--gold)
+    }
+
+    .filters button.on {
+      background: var(--red);
+      color: #FFF5E6;
+      border-color: var(--red)
+    }
+
+    .grid {
+      columns: 3 260px;
+      column-gap: 22px
+    }
+
+    .pol {
+      break-inside: avoid;
+      margin-bottom: 22px;
+      background: #FFFBF4;
+      padding: 12px 12px 16px;
+      border: 1px solid var(--rose2);
+      box-shadow: 0 8px 22px rgba(94, 20, 20, .08);
+      cursor: pointer;
+      transition: transform .35s, box-shadow .35s, border-color .35s
+    }
+
+    .pol:nth-child(odd) {
+      transform: rotate(-1deg)
+    }
+
+    .pol:nth-child(even) {
+      transform: rotate(1deg)
+    }
+
+    .pol:hover {
+      transform: rotate(0) translateY(-6px);
+      box-shadow: 0 20px 40px rgba(94, 20, 20, .16);
+      border-color: var(--gold)
+    }
+
+    .ph {
+      position: relative;
+      aspect-ratio: 4/4.2;
+      overflow: hidden;
+      background: var(--g)
+    }
+
+    .pol:nth-child(3n+2) .ph {
+      aspect-ratio: 4/3.2
+    }
+
+    .pol:nth-child(3n) .ph {
+      aspect-ratio: 4/5
+    }
+
+    .ph img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .ph .ghost {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center
+    }
+
+    .ph .ghost span {
+      font-family: 'Caveat';
+      font-size: 22px;
+      color: #FFF5E6;
+      border: 1.5px dashed rgba(255, 245, 230, .8);
+      padding: 4px 12px;
+      transform: rotate(-4deg)
+    }
+
+    .ph b {
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      color: rgba(255, 245, 230, .9);
+      font: italic 500 15px 'Playfair Display'
+    }
+
+    .pol small {
+      display: block;
+      margin-top: 12px;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .6
+    }
+
+    .pol h3 {
+      font-size: 20px;
+      margin: 2px 0
+    }
+
+    .pol .hand {
+      color: var(--red2);
+      font-size: 18px;
+      line-height: 1.25
+    }
+
+    .pol.hide {
+      display: none
+    }
+
+    /* lightbox */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(94, 20, 20, .78);
+      backdrop-filter: blur(6px)
+    }
+
+    .modal.open {
+      display: grid;
+      animation: fade .35s
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0
+      }
+    }
+
+    .box {
+      position: relative;
+      background: #FFFBF4;
+      max-width: 520px;
+      width: 100%;
+      max-height: 92vh;
+      overflow: auto;
+      padding: 20px;
+      border: 2px solid var(--gold);
+      outline: 1px solid var(--gold);
+      outline-offset: -9px
+    }
+
+    .box .ph {
+      aspect-ratio: 4/3.4
+    }
+
+    .box h3 {
+      font-size: 30px;
+      margin: 16px 0 6px;
+      color: var(--deep)
+    }
+
+    .x {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      z-index: 3;
+      background: none;
+      border: 0;
+      font-size: 30px;
+      color: var(--red);
+      cursor: pointer;
+      line-height: 1
+    }
+
+    .box .x {
+      color: #FFF5E6;
+      text-shadow: 0 1px 6px rgba(94, 20, 20, .6)
+    }
+
+    /* journey */
+    .journey {
+      background: var(--deep);
+      color: #FBEFE0;
+      padding: 100px 0
+    }
+
+    .journey h2 {
+      font-size: clamp(40px, 7vw, 76px);
+      text-align: right
+    }
+
+    .journey h2 em {
+      color: var(--gold2);
+      font-style: italic
+    }
+
+    .journey .eyebrow {
+      color: var(--gold2)
+    }
+
+    .jtop {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 44px
+    }
+
+    .map {
+      position: relative;
+      border: 1px solid rgba(229, 193, 88, .5);
+      padding: 24px;
+      background: radial-gradient(ellipse at center, rgba(185, 28, 28, .35), transparent 70%)
+    }
+
+    .map svg {
+      width: 100%;
+      display: block
+    }
+
+    .map text {
+      fill: #FBEFE0
+    }
+
+    .rax {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      color: var(--gold2);
+      font-size: 20px;
+      transform: rotate(-5deg);
+      text-align: right
+    }
+
+    .jnote {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 22px;
+      color: #F2D9C8
+    }
+
+    /* wishes */
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px
+    }
+
+    .wish {
+      position: relative;
+      background: rgba(253, 240, 240, .75);
+      backdrop-filter: blur(8px);
+      border: 1px solid transparent;
+      padding: 26px;
+      border-radius: 6px;
+      transition: .3s
+    }
+
+    .wish:hover {
+      border-color: var(--gold);
+      box-shadow: 0 14px 34px rgba(153, 27, 27, .1);
+      transform: translateY(-4px)
+    }
+
+    .who {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px
+    }
+
+    .av {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--red);
+      color: #FFF5E6;
+      display: grid;
+      place-items: center;
+      font: 500 22px 'Playfair Display';
+      flex: none;
+      border: 2px solid var(--gold2)
+    }
+
+    .av img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .who b {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red)
+    }
+
+    .wish blockquote {
+      font: italic 500 19px/1.5 'Playfair Display', serif
+    }
+
+    .wish .hand {
+      color: var(--red2);
+      font-size: 20px;
+      margin-top: 10px
+    }
+
+    .wish:after {
+      content: '♡';
+      position: absolute;
+      right: 18px;
+      top: 14px;
+      color: var(--gold)
+    }
+
+    /* letter */
+    .final {
+      background: var(--rose2);
+      border-radius: 6px;
+      padding: 70px 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 80px
+    }
+
+    .final h2 {
+      font-size: clamp(38px, 6vw, 64px);
+      color: var(--deep);
+      margin: 10px 0 14px
+    }
+
+    .env {
+      justify-self: center;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      animation: float 5s ease-in-out infinite
+    }
+
+    .env svg {
+      width: min(260px, 70vw);
+      filter: drop-shadow(0 14px 22px rgba(94, 20, 20, .2))
+    }
+
+    .env:hover .flap {
+      transform: rotateX(180deg)
+    }
+
+    .flap {
+      transform-origin: 50% 0;
+      transition: .6s;
+      transform-box: fill-box
+    }
+
+    @media(max-width:700px) {
+      .final {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+    }
+
+    .letter {
+      max-width: 480px;
+      text-align: center;
+      background: #FFFBF4;
+      padding: 44px 30px 34px
+    }
+
+    .letter h3 {
+      font-size: 34px;
+      color: var(--deep);
+      margin-bottom: 14px
+    }
+
+    .letter p {
+      margin: 10px 0
+    }
+
+    .letter .hand {
+      font-size: 26px;
+      color: var(--red2)
+    }
+
+    canvas#fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60
+    }
+
+    footer {
+      border-top: 1px solid var(--rose2);
+      padding: 26px 0;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--cream)
+    }
+  </style>
+</head>
+
+<body class="nojs">
+  <nav>
+    <div class="wrap"><span style="font-size:12px"><span style="color:var(--gold)">✦</span> for Khushbu</span>
+      <div><a href="#moments">Memories</a><a href="#journey">The Journey</a><a href="#notes">Family Notes</a></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="float" style="left:12%;top:120px">♡</span><span class="float"
+      style="left:22%;top:360px;animation-delay:-2s">✦</span><span class="float"
+      style="right:20%;top:420px;animation-delay:-4s">🌿</span>
+    <div class="wrap reveal">
+      <div class="eyebrow">A little love letter, in website form</div>
+      <h1>Bon voyage,<em>Khushbu.</em></h1>
+      <p>From our noisy, loving home in India<br>to your beautiful new beginning in Darwin.</p>
+      <svg class="flight" viewBox="0 0 560 140" fill="none">
+        <path class="trail" d="M20 120 C120 10 260 150 360 70 S510 20 540 40" stroke="#D4AF37" stroke-width="2"
+          stroke-linecap="round" />
+        <g
+          style="offset-path:path('M20 120 C120 10 260 150 360 70 S510 20 540 40');offset-rotate:auto;animation:fly 9s ease-in-out infinite">
+          <path d="M-14 0 L14 -8 L4 0 L14 8 Z M4 0 L-4 5" fill="#FDF0F0" stroke="#991B1B" stroke-width="1.6"
+            stroke-linejoin="round" />
+        </g>
+      </svg>
+      <style>
+        @keyframes fly {
+          from {
+            offset-distance: 0%
+          }
+
+          to {
+            offset-distance: 100%
+          }
+        }
+      </style>
+      <a class="btn" href="#moments">Walk through the memories ↓</a>
+      <div class="live hand"><i></i><span id="board">boarding today · made with love</span></div>
+    </div>
+    <div class="stamp"><small>Departure note</small><b>IND → AUS</b><span class="hand">one way, all heart</span></div>
+  </header>
+
+  <div class="intro">
+    <div class="wrap reveal">
+      <div class="eyebrow">01 / The India chapters</div>
+      <h3>Before Darwin, there was a thousand little versions of you and we loved every one.</h3>
+    </div>
+  </div>
+
+  <section class="pad" id="moments">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <div class="eyebrow">Moments we treasure</div>
+          <h2>A life held<br><em>in little frames.</em></h2>
+        </div>
+        <p>Tap any photo to open the full memory. Drop your pictures into the <code>images</code> folder.</p>
+      </div>
+      <div class="filters reveal" id="filters"><button class="on" data-f="all">All moments</button><button
+          data-f="child">Childhood days</button><button data-f="fam">Big family celebrations</button><button
+          data-f="crazy">Crazy moments</button><button data-f="next">With Raxit</button></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <div class="jtop reveal">
+        <div>
+          <div class="eyebrow">02 / The journey</div>
+          <p style="margin-top:14px;max-width:260px">India gave you your roots. Darwin is waiting to give you wings.</p>
+        </div>
+        <h2>From here<br><em>to everywhere.</em></h2>
+      </div>
+      <div class="map reveal"><svg viewBox="0 0 800 250">
+          <circle cx="110" cy="100" r="5" fill="#E5C158" />
+          <circle cx="690" cy="100" r="5" fill="#E5C158" />
+          <path d="M110 100 C300 -10 500 -10 690 100" fill="none" stroke="#E5C158" stroke-width="2"
+            stroke-dasharray="6 8" />
+          <text x="110" y="150" text-anchor="middle" font-family="Playfair Display" font-size="20"
+            letter-spacing="3">INDIA</text><text x="110" y="172" text-anchor="middle" font-family="Caveat"
+            font-size="18" opacity=".8">where your story began</text>
+          <text x="690" y="150" text-anchor="middle" font-family="Playfair Display" font-size="20"
+            letter-spacing="3">DARWIN</text><text x="690" y="172" text-anchor="middle" font-family="Caveat"
+            font-size="18" opacity=".8">where your next story blooms</text>
+          <text x="400" y="38" text-anchor="middle" font-family="Caveat" font-size="20" fill="#E5C158"
+            style="fill:#E5C158">a very long hug</text>
+        </svg>
+        <div class="rax hand">Raxit + Khushbu forever ♡</div>
+      </div>
+      <p class="jnote hand reveal">A new postcode. The same people in your corner.</p>
+    </div>
+  </section>
+
+  <section class="pad" id="notes">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <div class="eyebrow">03 / Notes from home</div>
+          <h2>Words to carry<br><em>with you.</em></h2>
+        </div>
+      </div>
+      <div class="wall" id="wall"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="final reveal">
+      <button class="env" id="open" aria-label="Open the letter"><svg viewBox="0 0 200 150">
+          <rect x="10" y="30" width="180" height="110" rx="6" fill="#FFFBF4" stroke="#D4AF37" stroke-width="2" />
+          <path d="M10 36 L100 100 L190 36" fill="none" stroke="#E5C158" stroke-width="2" />
+          <g class="flap">
+            <path d="M10 30 L100 95 L190 30 Z" fill="#FDF0F0" stroke="#D4AF37" stroke-width="2" />
+          </g>
+          <path d="M100 78 c-14-14-24-2-14 8 l14 12 14-12 c10-10 0-22-14-8z" fill="#B91C1C" />
+        </svg></button>
+      <div>
+        <div class="eyebrow">04 / Open when you land</div>
+        <h2>One last thing,<br><em>before Darwin.</em></h2>
+        <p style="margin-bottom:22px;max-width:340px">For the first quiet moment after you arrive a letter from the
+          people who will always be home.</p><button class="btn" id="open2">Open the letter →</button>
+      </div>
+    </div>
+  </div>
+  <footer>Made with every kind of love · Khushbu · Raxit · India ✈ Darwin</footer>
+
+  <div class="modal" id="lb">
+    <div class="box"><button class="x" aria-label="Close">×</button>
+      <div class="ph" id="lbph"></div><small id="lbc"
+        style="display:block;margin-top:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.6"></small>
+      <h3 id="lbt"></h3>
+      <p id="lbd"></p>
+      <p class="hand" style="color:var(--red2);font-size:22px" id="lbh"></p>
+    </div>
+  </div>
+  <div class="modal" id="lt">
+    <div class="box letter"><button class="x" style="color:var(--red);text-shadow:none" aria-label="Close">×</button>
+      <div style="color:var(--gold);font-size:26px">✦</div>
+      <h3>Dear Khushbu,</h3>
+      <p>By the time you read this, you will be on the ground in Darwin, a little tired and a lot loved.</p>
+      <p>Thank you for every ordinary day that became a story. Wherever you go, you take all of us with you, and
+        wherever we are, a seat at our table is always yours.</p>
+      <p>Go build your beautiful new chapter. We'll be a phone call away, always.</p>
+      <p class="hand">With all our love, your family ♡</p>
+    </div>
+  </div>
+  <canvas id="fx"></canvas>
+
+  <script>
+    document.body.classList.remove('nojs');
+    /* ✏️ EDIT HERE: your photos and captions. Put files in /images */
+    const MEMORIES = [
+      { img: 'images/chhoti.jpg', cat: 'child', label: 'Childhood days', t: 'The little years', h: 'Where every ordinary day became a story.', d: 'Write the full memory here — the place, the people, the silly detail only your family remembers.', g: '#C26A5A,#8E2A2A' },
+      { img: 'images/bombayall.jpg', cat: 'fam', label: 'Big family celebrations', t: 'All of us, always', h: 'A home full of voices, food, and love.', d: 'Write about a festival or gathering that sums up the whole big family.', g: '#E3C98A,#B8864B' },
+      { img: 'images/they5.png', cat: 'crazy', label: 'Crazy moments', t: 'Our favourite chaos', h: 'The kind of laughter that stays with you.', d: 'The story everyone retells at every family dinner.', g: '#D9988C,#A63838' },
+      { img: 'images/bandar.jpg', cat: 'child', label: 'Childhood days', t: 'Soft Sunday mornings', h: 'Small rituals. Big memories.', d: 'Chai, cartoons, someone shouting from the kitchen — write your version.', g: '#E8B7B7,#B14646' },
+      { img: 'images/Rax.jpg', cat: 'next', label: 'With Raxit', t: 'A new kind of happy', h: 'Two hearts, one beautiful next chapter.', d: 'A photo of you two, and what you wish for your new life together.', g: '#EBCFCF,#6E1F1F' },
+      { img: 'images/mrg.jpg', cat: 'fam', label: 'Big family celebrations', t: 'The family tree', h: 'Wherever you go, you carry all of us.', d: 'Roots, branches, and everyone who raised you.', g: '#D2A77A,#A06B3E' },
+    ];
+    const WISHES = [
+      { n: 'Masi', r: 'Masi', img: 'images/masi.jpg', q: 'May every new morning in Darwin feel like a warm hug from home.' },
+      { n: 'Dad', r: 'Dad', img: 'images/dad.jpg', q: 'You have made us proud in a hundred little ways. Fly gently, Khushbu.' },
+      { n: 'Siblings', r: 'Your siblings', img: 'images/siblings.jpg', q: 'Our jokes, our arguments, our midnight talks, nothing changes that.' },
+    ];
+    const ph = (m, i) => `<div class="ph" style="--g:linear-gradient(160deg,${m.g.split(',')[0]},${m.g.split(',')[1]})"><div class="ghost"><span>your photo here</span></div><b>0${i + 1}</b><img src="${m.img}" alt="${m.t}" onerror="this.remove()"></div>`;
+    const grid = document.getElementById('grid');
+    MEMORIES.forEach((m, i) => { const c = document.createElement('article'); c.className = 'pol reveal'; c.dataset.c = m.cat; c.innerHTML = ph(m, i) + `<small>${m.label}</small><h3>${m.t}</h3><div class="hand">${m.h}</div>`; c.onclick = () => { lbph.innerHTML = ph(m, i); lbc.textContent = m.label; lbt.textContent = m.t; lbd.textContent = m.d; lbh.textContent = m.h; lb.classList.add('open') }; grid.append(c) });
+    filters.onclick = e => { const b = e.target.closest('button'); if (!b) return; filters.querySelectorAll('button').forEach(x => x.classList.toggle('on', x == b)); grid.querySelectorAll('.pol').forEach(p => p.classList.toggle('hide', b.dataset.f != 'all' && p.dataset.c != b.dataset.f)) };
+    const wall = document.getElementById('wall');
+    WISHES.forEach(w => { const d = document.createElement('div'); d.className = 'wish reveal'; d.innerHTML = `<div class="who"><div class="av">${w.n[0]}<img src="${w.img}" alt="${w.n}" onerror="this.remove()"></div><div><b>${w.r}</b><span class="hand" style="color:var(--red2);font-size:18px">with all our love</span></div></div><blockquote>“${w.q}”</blockquote>`; wall.append(d) });
+    document.querySelectorAll('.modal').forEach(m => { m.onclick = e => { if (e.target == m || e.target.closest('.x')) m.classList.remove('open') } });
+    addEventListener('keydown', e => { if (e.key == 'Escape') document.querySelectorAll('.modal').forEach(m => m.classList.remove('open')) });
+    /* scroll reveal with safe fallback */
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')), 3500);
+    /* confetti */
+    const cv = document.getElementById('fx'), cx = cv.getContext('2d'); let P = [], run = false;
+    function boom() { cv.width = innerWidth; cv.height = innerHeight; const cols = ['#E5C158', '#D4AF37', '#F8C8CF', '#FDF0F0', '#B91C1C']; P = Array.from({ length: 150 }, () => ({ x: innerWidth / 2, y: innerHeight / 2, vx: (Math.random() - .5) * 16, vy: Math.random() * -15 - 3, s: 4 + Math.random() * 6, c: cols[Math.random() * 5 | 0], r: Math.random() * 6, l: 1 })); if (!run) { run = true; tick() } }
+    function tick() { cx.clearRect(0, 0, cv.width, cv.height); P.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += .35; p.vx *= .99; p.r += .2; p.l -= .008; cx.globalAlpha = Math.max(p.l, 0); cx.fillStyle = p.c; cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); cx.restore() }); P = P.filter(p => p.l > 0); P.length ? requestAnimationFrame(tick) : (run = false, cx.clearRect(0, 0, cv.width, cv.height)) }
+    const openL = () => { lt.classList.add('open'); boom() }; open.onclick = open2.onclick = openL;
+  </script>
+</body>
+
+</html>
